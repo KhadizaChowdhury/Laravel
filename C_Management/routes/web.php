@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\TokenVerificationMiddleware;
@@ -27,9 +28,10 @@ Route::get( '/send-otp', [UserController::class, 'SendOtpPage'] );
 Route::get( '/verify-otp', [UserController::class, 'VerifyOtpPage'] );
 Route::get( '/reset-password', [UserController::class, 'ResetPassPage'] )->middleware( [TokenVerificationMiddleware::class] );
 
-Route::get( '/dashboard', [TaskController::class, 'dashboardPage'] )->middleware( [TokenVerificationMiddleware::class] );
+Route::get( '/dashboard', [DashboardController::class, 'dashboardPage'] )->middleware( [TokenVerificationMiddleware::class] );
 
-Route::get( '/profile', [TaskController::class, 'ProfilePage'] );
+Route::get( '/profile', [DashboardController::class, 'ProfilePage'] )->middleware( [TokenVerificationMiddleware::class] );
+Route::get( '/profile-update', [DashboardController::class, 'ProfileUpdatePage'] )->middleware( [TokenVerificationMiddleware::class] );
 
 // Route::resource( 'tasks', TaskController::class );
 
@@ -38,10 +40,13 @@ Route::group( ['middleware' => [TokenVerificationMiddleware::class]], function (
 } );
 
 
-
+//User
 Route::post( '/reg-user', [UserController::class, 'createUser'] );
 Route::post( '/login-user', [UserController::class, 'UserLogin'] )->name('login.store');
 Route::post( '/otp-send', [UserController::class, 'SendOTPCode'] );
 Route::post( '/otp-verify', [UserController::class, 'VerifyOTP'] );
+Route::get( '/user-profile', [DashboardController::class, 'UserProfile'] )->middleware( [TokenVerificationMiddleware::class] );
+Route::post( '/update-profile', [DashboardController::class, 'UpdateUser'] )->middleware( [TokenVerificationMiddleware::class] );
 //Token Verify
 Route::post( '/password-reset', [UserController::class, 'ResetPassword'] )->middleware([TokenVerificationMiddleware::class]);
+

@@ -5,8 +5,9 @@
     @include('includes.header')
     <!-- vendor css -->
     @include('includes.css')
-    <script src="{{asset('js/toastify.js')}}"></script>
-    <script src="{{asset('js/axios.min.js')}}"></script>
+    
+     @include('includes.script')
+    @include('includes.toastify')
   </head>
   <body class="h-full">
 
@@ -54,8 +55,6 @@
       
     </div>
     @include('includes.footer')
-    @include('includes.script')
-    @include('includes.toastify')
 
   </body>
 </html>

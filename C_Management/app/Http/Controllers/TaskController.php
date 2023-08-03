@@ -13,15 +13,6 @@ class TaskController extends Controller
         // return view('tasks.index', compact('tasks'));
         return response()->json( $tasks );
     }
-    public function dashboardPage()
-    {
-        return view('layouts.dashboard');
-    }
-
-    public function ProfilePage()
-    {
-        return view('pages.profile.index');
-    }
 
     public function create()
     {

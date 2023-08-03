@@ -36,7 +36,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
 
             //For testing purpose we should comment this code
-            \App\Http\Middleware\VerifyCsrfToken::class,
+            // \App\Http\Middleware\VerifyCsrfToken::class,
             //After testing we should Uncomment this code
 
             \Illuminate\Routing\Middleware\SubstituteBindings::class,

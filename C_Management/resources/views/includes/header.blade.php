@@ -4,4 +4,5 @@
 <title>Tailwind Template</title>
 <meta name="author" content="David Grzyb">
 <meta name="description" content="">
+<script src="{{asset('js/toastify.js')}}"></script>
 <script src="{{ asset('js/axios.min.js') }}"></script>

@@ -190,8 +190,4 @@ class UserController extends Controller {
     public function destroy( string $id ) {
         //
     }
-
-    public function dashboardPage() {
-        return view( 'layouts.dashboard' );
-    }
 }

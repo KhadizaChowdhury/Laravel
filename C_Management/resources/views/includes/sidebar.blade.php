@@ -7,8 +7,7 @@
         <!-- Sidebar content here -->
         <label class="ml-3 mb-3 normal-case text-xl font-bold tracking-tight text-gray-900">Dashboard Menu</label>
         <li><a href="{{ url('/profile') }}">Profile</a></li>
-        <li><a>Sidebar Item 2</a></li>
-        
+        <li><a href="{{ url('/profile-update') }}">Profile Update</a></li>        
     </ul>
     </div>
 </div>
