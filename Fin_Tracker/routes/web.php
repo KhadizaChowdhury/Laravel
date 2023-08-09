@@ -73,6 +73,7 @@ Route::put( '/updateIncome', [IncomeController::class, 'updateIncome'] )->middle
 Route::delete( '/income/{income}', [IncomeController::class, 'deleteIncome'] )->middleware([TokenVerificationMiddleware::class]);
 
 Route::get( '/expenses', [ExpenseController::class, 'expensePage'] )->middleware([TokenVerificationMiddleware::class]);
+Route::get( '/createExpense', [ExpenseController::class, 'create'] )->middleware( [TokenVerificationMiddleware::class] );
 Route::get( '/expenseById', [ExpenseController::class, 'ReqById'] )->middleware([TokenVerificationMiddleware::class]);
 
 Route::get( '/allExpense', [ExpenseController::class, 'index'] )->middleware([TokenVerificationMiddleware::class]);

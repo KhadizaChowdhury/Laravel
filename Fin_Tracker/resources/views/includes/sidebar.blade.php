@@ -9,7 +9,9 @@
         <li><a href="{{ url('/profile') }}">Profile</a></li>
         <li><a href="{{ url('/profile-update') }}">Profile Update</a></li>
         <li><a href="{{ url('/incomes') }}">Incomes</a></li>
-        <li><a href="{{ url('/expenses') }}">Expenses</a></li>      
+        <li><a href="{{ url('/expenses') }}">Expenses</a></li>
+        <li><a href="{{ url('/createIncome') }}">Add Income</a></li>
+        <li><a href="{{ url('/createExpense') }}"> Add Expense</a></li>      
     </ul>
     </div>
 </div>

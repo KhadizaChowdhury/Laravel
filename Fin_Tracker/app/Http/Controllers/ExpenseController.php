@@ -28,6 +28,11 @@ class ExpenseController extends Controller
         return view('pages.expenses.index');
     }
 
+    public function create()
+    {
+        return view('pages.expenses.create');
+    }
+
     public function ReqById(Request $request)
     {
         $user_id = $request->header( 'u_id' );
@@ -56,7 +61,10 @@ class ExpenseController extends Controller
 
         $expense = Expense::create($validatedData);
 
-        return response()->json(['message' => 'Expense recorded successfully', 'expense' => $expense]);
+        return response()->json([
+            'status'  => 'success',
+            'message' => 'Expense recorded successfully',
+            'expense' => $expense]);
     }
 
     public function updateExpense(Request $request)
