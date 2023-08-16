@@ -52,7 +52,8 @@
 @endsection
 
 <script>
-    async function createIncome(){
+    async function createIncome(event){
+        event.preventDefault();
         console.log("Clicked");
         let description = document.getElementById('description').value;
         let category = document.getElementById('category').value;

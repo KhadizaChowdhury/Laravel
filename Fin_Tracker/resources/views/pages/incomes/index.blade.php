@@ -4,6 +4,14 @@
     <div class="flex flex-col">
         <div class="w-full">
             <div class="p-8 border-b border-gray-200 shadow">
+                <button class="btn" onclick="my_modal_3.showModal()">open modal</button>
+                <dialog id="my_modal_3" class="modal">
+                    <form method="dialog" class="modal-box">
+                        <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                        <h3 class="font-bold text-lg">Hello!</h3>
+                        <p class="py-4">Press ESC key or click on ✕ button to close</p>
+                    </form>
+                </dialog>
                 <table class="divide-y divide-gray-300" id="tableData">
                     <thead class="bg-black">
                         <tr>
@@ -79,7 +87,7 @@
                         <div class="text-sm text-gray-500">${income['date']}</div>
                     </td>
                     <td class="px-6 py-4">
-                        <a class="inline-block text-center">
+                        <a data-id=${income['id']} class="edit inline-block text-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-400"
                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -88,7 +96,7 @@
                         </a>
                     </td>
                     <td class="px-6 py-4">
-                        <a class="inline-block text-center">
+                        <a data-id=${income['id']} class="delete inline-block text-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-red-400"
                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -99,6 +107,16 @@
                 </tr>`
                 allIncome.append(row)
             });
+
+            $('.edit').on('click',function(){
+                let id=$(this).data('id');
+                alert(id)
+            } )
+            $('.delete').on('click',function(){
+                let id=$(this).data('id');
+                alert(id)
+            } )
+
             tableData.DataTable({
               order: [[5, 'desc']],
               lengthMenu: [3,5,10,15,20]

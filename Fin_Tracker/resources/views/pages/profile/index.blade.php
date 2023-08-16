@@ -89,6 +89,7 @@
                 
 
               allUser.append(row)
+              
             });
 
             tableData.DataTable({
@@ -101,7 +102,7 @@
         }
     }
 
-    
+    my_modal_5.showModal()
 
     }
 

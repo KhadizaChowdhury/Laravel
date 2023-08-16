@@ -69,8 +69,8 @@ Route::get( '/incomesById', [IncomeController::class, 'ReqById'] )->middleware([
 
 Route::get( '/allIncome', [IncomeController::class, 'index'] )->middleware([TokenVerificationMiddleware::class]);
 Route::post( '/income', [IncomeController::class, 'storeIncome'] )->middleware([TokenVerificationMiddleware::class]);
-Route::put( '/updateIncome', [IncomeController::class, 'updateIncome'] )->middleware([TokenVerificationMiddleware::class]);
-Route::delete( '/income/{income}', [IncomeController::class, 'deleteIncome'] )->middleware([TokenVerificationMiddleware::class]);
+Route::put( '/updateIncome', [IncomeController::class, 'updateIncome'] )->name('incomes.edit')->middleware([TokenVerificationMiddleware::class]);
+Route::delete( '/income/{income}', [IncomeController::class, 'deleteIncome'] )->name('incomes.delete')->middleware([TokenVerificationMiddleware::class]);
 
 Route::get( '/expenses', [ExpenseController::class, 'expensePage'] )->middleware([TokenVerificationMiddleware::class]);
 Route::get( '/createExpense', [ExpenseController::class, 'create'] )->middleware( [TokenVerificationMiddleware::class] );
