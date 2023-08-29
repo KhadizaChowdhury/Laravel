@@ -21,9 +21,6 @@ return new class extends Migration
             $table->foreign( 'user_id' )->references( 'id' )->on( 'users' )
             ->restrictOnDelete()
             ->cascadeOnUpdate();
-            $table->foreign( 'user_id' )->references( 'id' )->on( 'users' )
-            ->restrictOnDelete()
-            ->cascadeOnUpdate();
             $table->foreign( 'event_id' )->references( 'id' )->on( 'events' )
             ->restrictOnDelete()
             ->cascadeOnUpdate();
