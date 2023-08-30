@@ -16,18 +16,18 @@ class LeaveCategorySeeder extends Seeder
        // Sample data for leave categories
         $leaveCategories = [
             [
-                'categoryName' => 'Sick Leave',
-                'description' => 'Leave for health-related reasons.',
-                'available_leaves' => 10,
-                'carry_over' => false,
-                'max_carry_over_days' => 0
-            ],
-            [
                 'categoryName' => 'Vacation',
                 'description' => 'Regular vacation days.',
                 'available_leaves' => 15,
                 'carry_over' => true,
                 'max_carry_over_days' => 10
+            ],
+            [
+                'categoryName' => 'Sick Leave',
+                'description' => 'Leave for health-related reasons.',
+                'available_leaves' => 10,
+                'carry_over' => false,
+                'max_carry_over_days' => 0
             ],
             [
                 'categoryName' => 'Unpaid Leave',
